@@ -42,7 +42,7 @@
               <a href="categories.html" class="nav-link">Categories</a>
             </li>
             <li class="nav-item px-2">
-              <a href="users.html" class="nav-link active">Users</a>
+              <a href="users.html" class="nav-link">Users</a>
             </li>
           </ul>
 
@@ -75,85 +75,94 @@
     </nav>
 
     <!-- HEADER -->
-    <section id="main-header" class="bg-warning text-white py-2">
+    <section id="main-header" class="bg-primary text-white py-2">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h1><i class="fas fa-users"></i> Users</h1>
+            <h1><i class="fas fa-cog"></i> Settings</h1>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SEARCH -->
-    <section id="searchUsers" class="py-4 mb-4 bg-light">
+    <!-- ACTIONS -->
+    <section id="actions" class="py-4 mb-4 bg-light">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 ml-auto">
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search Users..."
-              />
-              <div class="input-group-append">
-                <button class="btn btn-warning">Search</button>
-              </div>
-            </div>
+          <div class="col-md-3">
+            <a href="index.html" class="btn btn-light btn-block">
+              <i class="fas fa-arrow-left"></i> Back To Dashboard
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="index.html" class="btn btn-success btn-block">
+              <i class="fas fa-check"></i> Save Changes
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- USERS -->
-    <section id="users">
+    <!-- SETTINGS -->
+    <section id="settings">
       <div class="container">
         <div class="row">
           <div class="col">
             <div class="card">
-              <div class="card-header"><h4>Latest Users</h4></div>
-              <table class="table table-striped">
-                <thead class="thead-dark">
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>djoe@gmail.com</td>
-                    <td>
-                      <a href="details.html" class="btn btn-secondary">
-                        <i class="fas fa-angle-double-right"></i> Details
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Harry White</td>
-                    <td>harry@yahoo.com</td>
-                    <td>
-                      <a href="details.html" class="btn btn-secondary">
-                        <i class="fas fa-angle-double-right"></i> Details
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Mary Johnson</td>
-                    <td>mary@hotmail.com</td>
-                    <td>
-                      <a href="details.html" class="btn btn-secondary">
-                        <i class="fas fa-angle-double-right"></i> Details
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="card-header"><h4>Edit Settings</h4></div>
+              <div class="card-body">
+                <form>
+                  <fieldset class="form-group">
+                    <legend>Allow User Registration</legend>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          value="Yes"
+                          checked
+                        />
+                        Yes
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          value="No"
+                        />
+                        No
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <legend>Homepage Format</legend>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          value="posts"
+                          checked
+                        />
+                        Blog Page
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          value="page"
+                        />
+                        Homepage
+                      </label>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -188,10 +197,13 @@
       integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"
     ></script>
-
+    <script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
     <script>
       // Get the current year for the copyright
       $('#year').text(new Date().getFullYear());
+
+      // CKEDITOR
+      CKEDITOR.replace('editor1');
     </script>
   </body>
 </html>
